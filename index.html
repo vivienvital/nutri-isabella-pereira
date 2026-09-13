@@ -5,6 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Isabella Pereira · Nutricionista Infantil · Campo Grande, MS</title>
 <meta name="description" content="Nutricionista infantil em Campo Grande, MS. Seletividade alimentar, introdução alimentar e acompanhamento nutricional para crianças com condições da infância. Atendimento presencial e online.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nutrisabellapereira.com.br/">
+<meta property="og:title" content="Isabella Pereira · Nutricionista Infantil">
+<meta property="og:description" content="Acompanhamento nutricional para bebês, crianças e adolescentes em Campo Grande, MS. Seletividade alimentar, introdução alimentar e mais.">
+<meta property="og:image" content="https://nutrisabellapereira.com.br/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Isabella Pereira · Nutricionista Infantil">
+<meta name="twitter:description" content="Acompanhamento nutricional para bebês, crianças e adolescentes em Campo Grande, MS.">
+<meta name="twitter:image" content="https://nutrisabellapereira.com.br/assets/og-image.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -238,7 +252,18 @@
   .chip svg{width:13px;height:13px;color:var(--sage-ink);flex-shrink:0;}
 
   /* ---------- DEPOIMENTOS ---------- */
-  .depoimentos{padding:100px 0;background:var(--cream-deep);}
+  .depoimentos{position:relative;overflow:hidden;padding:100px 0;background:var(--cream-deep);}
+  .depoimentos .wrap{position:relative;z-index:1;}
+  .sky{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+  .sky .moon{position:absolute;top:56px;right:10%;width:64px;height:64px;opacity:0.7;}
+  .sky .moon::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--sage);}
+  .sky .moon::after{content:"";position:absolute;top:-9px;left:21px;width:64px;height:64px;border-radius:50%;background:var(--cream-deep);}
+  .sky .star{position:absolute;border-radius:50%;background:var(--blush-deep);}
+  @media (prefers-reduced-motion: no-preference){
+    .sky .star{animation:twinkle 4.5s ease-in-out infinite, drift 24s ease-in-out infinite;}
+  }
+  @keyframes twinkle{0%,100%{opacity:.12;}50%{opacity:.7;}}
+  @keyframes drift{0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);}}
   .dep-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
   .dep-card{
     background:var(--card);border-radius:var(--radius);padding:38px 36px;
@@ -350,6 +375,23 @@
     .cta-box{padding:40px 24px;}
     .dep-card{padding:30px 26px;}
   }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{
+      opacity:0;transform:translateY(26px);
+      transition:opacity .8s cubic-bezier(.16,.8,.24,1), transform .8s cubic-bezier(.16,.8,.24,1);
+    }
+    .reveal.is-visible{opacity:1;transform:none;}
+    .pilares-grid .pilar-card:nth-child(1){transition-delay:.05s;}
+    .pilares-grid .pilar-card:nth-child(2){transition-delay:.16s;}
+    .dep-grid .dep-card:nth-child(1){transition-delay:.05s;}
+    .dep-grid .dep-card:nth-child(2){transition-delay:.16s;}
+    .faq-list .faq-item:nth-child(1){transition-delay:0s;}
+    .faq-list .faq-item:nth-child(2){transition-delay:.08s;}
+    .faq-list .faq-item:nth-child(3){transition-delay:.16s;}
+    .faq-list .faq-item:nth-child(4){transition-delay:.24s;}
+  }
 </style>
 </head>
 <body>
@@ -407,11 +449,11 @@
   <!-- PILARES -->
   <section class="pilares" id="pilares">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="section-label">Áreas de atuação</span>
         <h2>Cuidado nutricional em cada fase da infância</h2>
       </div>
-      <div class="pilar-feature">
+      <div class="pilar-feature reveal">
         <video autoplay muted loop playsinline poster="assets/bg-introducao-alimentar-poster.jpg">
           <source src="assets/bg-introducao-alimentar.mp4" type="video/mp4">
         </video>
@@ -424,14 +466,14 @@
         </div>
       </div>
       <div class="pilares-grid">
-        <div class="pilar-card">
+        <div class="pilar-card reveal">
           <div class="pilar-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v6a3 3 0 0 0 6 0V3"/><path d="M11 9v12"/><path d="M17 3c-1.5 2-1.5 5 0 7 1.5 2 1.5 5 0 9"/></svg>
           </div>
           <h3>Seletividade alimentar</h3>
           <p>Estratégias respeitosas para ampliar o paladar da criança, sem pressão e sem transformar a refeição em um campo de batalha.</p>
         </div>
-        <div class="pilar-card">
+        <div class="pilar-card reveal">
           <div class="pilar-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 9 8l3 3 3.5-5.5L20 10"/><path d="M3 18h18"/></svg>
           </div>
@@ -445,13 +487,13 @@
   <!-- SOBRE -->
   <section class="sobre" id="sobre">
     <div class="wrap sobre-grid">
-      <div class="sobre-photo">
+      <div class="sobre-photo reveal">
         <div class="sobre-photo-inner">
           <img src="assets/isabella-about.jpg" alt="Isabella Pereira sorrindo em seu consultório">
         </div>
         <div class="sobre-badge"><strong>+5</strong>anos dedicados à nutrição infantil</div>
       </div>
-      <div class="sobre-content">
+      <div class="sobre-content reveal">
         <span class="section-label">Sobre</span>
         <h2>Isabella Pereira</h2>
         <div class="sobre-credential">Nutricionista · CRN 365982</div>
@@ -473,13 +515,28 @@
 
   <!-- DEPOIMENTOS -->
   <section class="depoimentos" id="depoimentos">
+    <div class="sky">
+      <div class="moon"></div>
+      <div class="star" style="width:6px;height:6px;top:18%;left:12%;animation-delay:.2s,0s;"></div>
+      <div class="star" style="width:4px;height:4px;top:32%;left:22%;animation-delay:1.4s,2s;"></div>
+      <div class="star" style="width:5px;height:5px;top:12%;left:34%;animation-delay:.8s,4s;"></div>
+      <div class="star" style="width:4px;height:4px;top:60%;left:8%;animation-delay:2.1s,1s;"></div>
+      <div class="star" style="width:6px;height:6px;top:70%;left:26%;animation-delay:.5s,3s;"></div>
+      <div class="star" style="width:4px;height:4px;top:24%;left:66%;animation-delay:1.8s,2.5s;"></div>
+      <div class="star" style="width:5px;height:5px;top:52%;left:82%;animation-delay:.3s,1.5s;"></div>
+      <div class="star" style="width:4px;height:4px;top:80%;left:60%;animation-delay:2.6s,0.5s;"></div>
+      <div class="star" style="width:5px;height:5px;top:16%;left:90%;animation-delay:1.1s,3.5s;"></div>
+      <div class="star" style="width:4px;height:4px;top:40%;left:95%;animation-delay:.6s,2.2s;"></div>
+      <div class="star" style="width:3px;height:3px;top:85%;left:88%;animation-delay:1.6s,0.8s;"></div>
+      <div class="star" style="width:3px;height:3px;top:45%;left:44%;animation-delay:2.3s,1.8s;"></div>
+    </div>
     <div class="wrap">
-      <div class="section-head center">
+      <div class="section-head center reveal">
         <span class="section-label">Depoimentos</span>
         <h2>O que as famílias dizem</h2>
       </div>
       <div class="dep-grid">
-        <div class="dep-card">
+        <div class="dep-card reveal">
           <div class="dep-quote-mark">"</div>
           <p class="quote">Simplesmente maravilhosa. Tem um tato excepcional com os pequenos, sempre paciente e pronta a ajudar as crianças e suas famílias. Recomendo demais.</p>
           <div class="dep-author">
@@ -487,7 +544,7 @@
             <span>Josiana Abelardo</span>
           </div>
         </div>
-        <div class="dep-card">
+        <div class="dep-card reveal">
           <div class="dep-quote-mark">"</div>
           <p class="quote">Profissional maravilhosa. Nos ajudou muito quando meu filho estava resistente à alimentação. Eu e minha família recomendamos de olhos fechados.</p>
           <div class="dep-author">
@@ -502,24 +559,24 @@
   <!-- FAQ -->
   <section class="faq" id="faq">
     <div class="wrap">
-      <div class="section-head center">
+      <div class="section-head center reveal">
         <span class="section-label">Dúvidas frequentes</span>
         <h2>Perguntas que os pais mais fazem</h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item open">
+        <div class="faq-item open reveal">
           <button class="faq-q">Com qual idade a criança pode iniciar o acompanhamento?<span class="plus"></span></button>
           <div class="faq-a"><p>Desde a introdução alimentar, por volta dos seis meses, até a adolescência.</p></div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item reveal">
           <button class="faq-q">Meu filho é muito seletivo. Ainda há solução?<span class="plus"></span></button>
           <div class="faq-a"><p>Sim. A seletividade alimentar pode ser trabalhada com estratégias respeitosas e graduais, sem pressão ou traumas para a criança e para a família.</p></div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item reveal">
           <button class="faq-q">O atendimento é online?<span class="plus"></span></button>
           <div class="faq-a"><p>Sim, a maior parte das consultas pode ser feita online. A exceção é o atendimento "Escolinha da Nutri", que é presencial.</p></div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item reveal">
           <button class="faq-q">Atende por planos de saúde?<span class="plus"></span></button>
           <div class="faq-a"><p>O atendimento é exclusivamente particular, o que garante o tempo e o acolhimento que cada paciente merece.</p></div>
         </div>
@@ -530,7 +587,7 @@
   <!-- CTA FINAL -->
   <section class="cta-final">
     <div class="wrap">
-      <div class="cta-box">
+      <div class="cta-box reveal">
         <img class="cta-mark" src="assets/logo-mark-white.png" alt="">
         <div>
           <h2>Vamos cuidar da alimentação do seu filho com leveza?</h2>
@@ -586,6 +643,20 @@
       a.style.maxHeight = !isOpen ? a.scrollHeight + 'px' : null;
     });
   });
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+  }
 </script>
 
 </body>
