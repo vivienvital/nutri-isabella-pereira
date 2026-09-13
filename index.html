@@ -138,7 +138,7 @@
     box-shadow:var(--shadow);
     aspect-ratio:3/4;
   }
-  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+  .hero-photo img, .hero-photo video{width:100%;height:100%;object-fit:cover;}
   .hero-tag{
     position:absolute;z-index:2;bottom:-22px;left:-26px;
     background:var(--card);border:1px solid var(--line);
@@ -171,6 +171,22 @@
     padding:38px 32px 34px;transition:transform .25s ease, box-shadow .25s ease;
   }
   .pilar-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .pilar-card.has-video{
+    position:relative;overflow:hidden;min-height:360px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    border:none;
+  }
+  .pilar-card.has-video video{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;z-index:0;
+  }
+  .pilar-card.has-video::after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg, rgba(46,42,34,0.06) 0%, rgba(46,42,34,0.5) 62%, rgba(46,42,34,0.82) 100%);
+  }
+  .pilar-card.has-video .pilar-icon,
+  .pilar-card.has-video h3,
+  .pilar-card.has-video p{position:relative;z-index:2;}
   .pilar-icon{
     width:56px;height:56px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;
@@ -185,6 +201,9 @@
   .pilar-card:nth-child(3) .pilar-icon svg{color:#9C7B4A;}
   .pilar-card h3{font-family:var(--font-display);font-size:1.32rem;font-weight:500;margin:0 0 12px;}
   .pilar-card p{color:var(--ink-soft);font-size:0.96rem;line-height:1.6;margin:0;}
+  .pilar-card.has-video .pilar-icon{background:rgba(255,255,255,0.92);}
+  .pilar-card.has-video h3{color:#fff;}
+  .pilar-card.has-video p{color:rgba(255,255,255,0.92);}
 
   /* ---------- SOBRE ---------- */
   .sobre{padding:40px 0 110px;}
@@ -366,7 +385,9 @@
       <div class="hero-photo-wrap">
         <div class="hero-blob"></div>
         <div class="hero-photo">
-          <img src="assets/isabella-hero.jpg" alt="Isabella Pereira, nutricionista infantil, em seu consultório">
+          <video autoplay muted playsinline poster="assets/isabella-hero.jpg">
+            <source src="assets/isabella-hero.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="hero-tag">
           <span class="num">CRN</span>
@@ -391,7 +412,10 @@
           <h3>Seletividade alimentar</h3>
           <p>Estratégias respeitosas para ampliar o paladar da criança, sem pressão e sem transformar a refeição em um campo de batalha.</p>
         </div>
-        <div class="pilar-card">
+        <div class="pilar-card has-video">
+          <video autoplay muted loop playsinline poster="assets/bg-introducao-alimentar-poster.jpg">
+            <source src="assets/bg-introducao-alimentar.mp4" type="video/mp4">
+          </video>
           <div class="pilar-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 2-5 5-5 9a5 5 0 0 0 10 0c0-4-2-7-5-9Z"/><path d="M9 21h6"/><path d="M12 17v4"/></svg>
           </div>
@@ -531,6 +555,7 @@
     <div class="footer-meta">
       CRN 365982 · Copyright © Isabella Pereira 2026 · Todos os direitos reservados
       <a class="credit" href="https://instagram.com/vivienvital" target="_blank" rel="noopener">Feito com ❤️ por vivienvital</a>
+      <a class="credit" href="https://www.magnific.com/br/video-gratuito/bebe-comendo-maca_2812807#fromView=search&amp;page=1&amp;position=28&amp;uuid=25de2100-e44d-4077-9fdb-b25a067afcf5&amp;track=ais_hybrid" target="_blank" rel="noopener">Vídeo de magnific</a>
     </div>
   </div>
 </footer>
