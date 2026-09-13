@@ -272,6 +272,10 @@
     content:"";position:absolute;top:-30%;right:-10%;width:340px;height:340px;
     border-radius:50%;background:rgba(255,255,255,0.06);
   }
+  .cta-mark{
+    position:absolute;right:44px;bottom:-30px;width:170px;height:auto;
+    opacity:0.13;pointer-events:none;
+  }
   .cta-box h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.8rem,3vw,2.4rem);margin:0 0 16px;position:relative;}
   .cta-box p{opacity:0.86;font-size:1rem;line-height:1.6;margin:0 0 28px;max-width:44ch;position:relative;}
   .cta-box .btn{background:#fff;color:var(--sage-deep);box-shadow:0 14px 30px -12px rgba(0,0,0,0.3);position:relative;}
@@ -302,6 +306,7 @@
     .sobre-photo{max-width:380px;margin:0 auto;}
     .dep-grid{grid-template-columns:1fr;}
     .cta-box{grid-template-columns:1fr;padding:48px 32px;}
+    .cta-mark{display:none;}
     .cta-details{border-top:1px solid rgba(255,255,255,0.2);padding-top:24px;}
     .footer-row{flex-direction:column;align-items:flex-start;text-align:left;}
     .footer-meta{text-align:left;}
@@ -493,6 +498,7 @@
   <section class="cta-final">
     <div class="wrap">
       <div class="cta-box">
+        <img class="cta-mark" src="assets/logo-mark-white.png" alt="">
         <div>
           <h2>Vamos cuidar da alimentação do seu filho com leveza?</h2>
           <p>Agende uma consulta e comece a construir uma relação mais tranquila e positiva entre seu filho e a comida.</p>
