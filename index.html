@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isabella Pereira · Nutricionista Infantil · Campo Grande, MS</title>
+<meta name="description" content="Nutricionista infantil em Campo Grande, MS. Seletividade alimentar, introdução alimentar e acompanhamento nutricional para crianças com condições da infância. Atendimento presencial e online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EF;
+    --cream-deep:#F2E9DD;
+    --card:#FFFDF9;
+    --blush:#F0D3DA;
+    --blush-deep:#D9A0AF;
+    --sage:#C3CBA3;
+    --sage-deep:#748156;
+    --sage-ink:#5C6644;
+    --ink:#2E2A22;
+    --ink-soft:#726B5E;
+    --ink-faint:#A79E8E;
+    --line:rgba(46,42,34,0.10);
+    --shadow: 0 20px 60px -30px rgba(60,45,30,0.35);
+    --radius: 26px;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Albert Sans', sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  section{position:relative;}
+
+  ::selection{background:var(--blush-deep);color:#fff;}
+
+  /* decorative arc-and-dots motif, echoing the brand mark */
+  .motif-arc{
+    position:absolute;
+    border:1.5px solid var(--sage);
+    border-radius:50%;
+    opacity:0.55;
+  }
+  .motif-dot{
+    position:absolute;
+    width:9px;height:9px;border-radius:50%;
+    background:var(--blush-deep);
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:40;
+    background:rgba(251,246,239,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:1180px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.28rem;letter-spacing:0.01em;text-decoration:none;}
+  .brand-mark{width:34px;height:34px;flex-shrink:0;}
+  .brand small{display:block;font-family:var(--font-body);font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--sage-ink);font-weight:600;margin-top:1px;}
+  nav.links{display:flex;gap:36px;font-size:0.92rem;color:var(--ink-soft);}
+  nav.links a{text-decoration:none;position:relative;padding:4px 0;transition:color .2s;}
+  nav.links a:hover{color:var(--ink);}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--blush-deep);transition:width .25s ease;}
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--sage-deep);color:#fff;
+    padding:11px 22px;border-radius:100px;
+    font-size:0.88rem;font-weight:600;text-decoration:none;
+    box-shadow:0 8px 20px -8px rgba(116,129,86,0.55);
+    transition:transform .2s ease, box-shadow .2s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(116,129,86,0.65);}
+  .burger{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:76px 0 100px;overflow:hidden;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--sage-ink);font-weight:600;margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--sage-ink);}
+  .hero h1{
+    font-family:var(--font-display);font-weight:400;
+    font-size:clamp(2.5rem,4.6vw,3.7rem);line-height:1.08;letter-spacing:-0.01em;
+    margin:0 0 24px;
+  }
+  .hero h1 em{font-style:italic;color:var(--blush-deep);font-weight:400;}
+  .hero p.lead{font-size:1.14rem;line-height:1.65;color:var(--ink-soft);max-width:46ch;margin:0 0 34px;}
+  .cta-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--sage-deep);color:#fff;
+    padding:16px 30px;border-radius:100px;
+    font-size:0.98rem;font-weight:600;text-decoration:none;
+    box-shadow:0 14px 30px -12px rgba(116,129,86,0.6);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(116,129,86,0.7);}
+  .btn svg{width:18px;height:18px;}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--ink);text-decoration:none;font-size:0.95rem;font-weight:600;
+    border-bottom:1.5px solid var(--ink);padding-bottom:3px;
+  }
+
+  .hero-photo-wrap{position:relative;}
+  .hero-blob{
+    position:absolute;inset:-8% -14% -8% -6%;
+    background:var(--blush);
+    border-radius:44% 56% 58% 42% / 48% 42% 58% 52%;
+    z-index:0;
+  }
+  .hero-photo{
+    position:relative;z-index:1;
+    border-radius:38% 62% 60% 40% / 46% 40% 60% 54%;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    aspect-ratio:3/4;
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+  .hero-tag{
+    position:absolute;z-index:2;bottom:-22px;left:-26px;
+    background:var(--card);border:1px solid var(--line);
+    border-radius:18px;padding:16px 20px;
+    box-shadow:0 18px 40px -20px rgba(60,45,30,0.4);
+    display:flex;align-items:center;gap:12px;
+    max-width:230px;
+  }
+  .hero-tag .num{font-family:var(--font-display);font-size:1.7rem;color:var(--sage-ink);line-height:1;}
+  .hero-tag .txt{font-size:0.78rem;color:var(--ink-soft);line-height:1.35;}
+
+  /* ---------- SECTION LABELS ---------- */
+  .section-label{
+    font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--blush-deep);font-weight:700;margin-bottom:14px;display:block;
+  }
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{
+    font-family:var(--font-display);font-weight:400;
+    font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.15;margin:0;letter-spacing:-0.01em;
+  }
+  .section-head p{color:var(--ink-soft);font-size:1.02rem;line-height:1.6;margin-top:16px;}
+  .center{text-align:center;margin-left:auto;margin-right:auto;}
+
+  /* ---------- PILARES ---------- */
+  .pilares{padding:100px 0;}
+  .pilares-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .pilar-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:38px 32px 34px;transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .pilar-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .pilar-icon{
+    width:56px;height:56px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:22px;
+  }
+  .pilar-icon svg{width:26px;height:26px;}
+  .pilar-card:nth-child(1) .pilar-icon{background:var(--blush);}
+  .pilar-card:nth-child(1) .pilar-icon svg{color:var(--blush-deep);}
+  .pilar-card:nth-child(2) .pilar-icon{background:var(--sage);}
+  .pilar-card:nth-child(2) .pilar-icon svg{color:var(--sage-ink);}
+  .pilar-card:nth-child(3) .pilar-icon{background:var(--cream-deep);}
+  .pilar-card:nth-child(3) .pilar-icon svg{color:#9C7B4A;}
+  .pilar-card h3{font-family:var(--font-display);font-size:1.32rem;font-weight:500;margin:0 0 12px;}
+  .pilar-card p{color:var(--ink-soft);font-size:0.96rem;line-height:1.6;margin:0;}
+
+  /* ---------- SOBRE ---------- */
+  .sobre{padding:40px 0 110px;}
+  .sobre-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;}
+  .sobre-photo{position:relative;}
+  .sobre-photo-inner{
+    border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+    aspect-ratio:4/3.4;
+  }
+  .sobre-photo-inner img{width:100%;height:100%;object-fit:cover;}
+  .sobre-badge{
+    position:absolute;bottom:-18px;right:-18px;
+    background:var(--sage-deep);color:#fff;
+    border-radius:50%;width:104px;height:104px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;font-size:0.62rem;letter-spacing:0.06em;line-height:1.4;
+    box-shadow:0 16px 32px -14px rgba(76,88,52,0.55);
+  }
+  .sobre-badge strong{display:block;font-family:var(--font-display);font-size:1.1rem;font-weight:500;}
+  .sobre-content .section-label{margin-bottom:10px;}
+  .sobre-content h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.9rem,3.4vw,2.5rem);margin:0 0 6px;}
+  .sobre-credential{color:var(--sage-ink);font-weight:600;font-size:0.92rem;margin-bottom:22px;}
+  .sobre-content p{color:var(--ink-soft);font-size:1rem;line-height:1.72;margin:0 0 18px;}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 32px;}
+  .chip{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--cream-deep);border:1px solid var(--line);
+    border-radius:100px;padding:9px 16px;font-size:0.84rem;color:var(--ink);
+  }
+  .chip svg{width:13px;height:13px;color:var(--sage-ink);flex-shrink:0;}
+
+  /* ---------- DEPOIMENTOS ---------- */
+  .depoimentos{padding:100px 0;background:var(--cream-deep);}
+  .dep-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+  .dep-card{
+    background:var(--card);border-radius:var(--radius);padding:38px 36px;
+    border:1px solid var(--line);position:relative;
+  }
+  .dep-quote-mark{font-family:var(--font-display);font-size:3.2rem;color:var(--blush-deep);line-height:1;opacity:0.5;margin-bottom:6px;}
+  .dep-card p.quote{font-size:1.04rem;line-height:1.65;color:var(--ink);margin:0 0 22px;font-family:var(--font-display);font-weight:400;}
+  .dep-author{display:flex;align-items:center;gap:12px;}
+  .dep-avatar{
+    width:42px;height:42px;border-radius:50%;
+    background:var(--sage);color:var(--sage-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-display);font-size:1.1rem;
+  }
+  .dep-author span{font-size:0.88rem;color:var(--ink-soft);font-weight:600;}
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:100px 0;}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item:first-child{border-top:1px solid var(--line);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:26px 4px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    font-family:var(--font-body);font-size:1.06rem;font-weight:600;color:var(--ink);
+  }
+  .faq-q .plus{
+    flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--cream-deep);
+    display:flex;align-items:center;justify-content:center;position:relative;
+    transition:transform .3s ease, background .3s ease;
+  }
+  .faq-q .plus::before, .faq-q .plus::after{
+    content:"";position:absolute;background:var(--sage-ink);border-radius:2px;
+  }
+  .faq-q .plus::before{width:12px;height:1.6px;}
+  .faq-q .plus::after{width:1.6px;height:12px;transition:transform .3s ease;}
+  .faq-item.open .faq-q .plus{background:var(--sage-deep);}
+  .faq-item.open .faq-q .plus::before, .faq-item.open .faq-q .plus::after{background:#fff;}
+  .faq-item.open .faq-q .plus::after{transform:rotate(90deg) scaleY(0);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .faq-a p{color:var(--ink-soft);font-size:0.98rem;line-height:1.65;margin:0 0 28px;padding-right:50px;}
+
+  /* ---------- CTA FINAL ---------- */
+  .cta-final{padding:110px 0 100px;}
+  .cta-box{
+    background:var(--sage-deep);color:#FBF6EF;
+    border-radius:36px;padding:70px 60px;
+    display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center;
+    position:relative;overflow:hidden;
+  }
+  .cta-box::before{
+    content:"";position:absolute;top:-30%;right:-10%;width:340px;height:340px;
+    border-radius:50%;background:rgba(255,255,255,0.06);
+  }
+  .cta-box h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.8rem,3vw,2.4rem);margin:0 0 16px;position:relative;}
+  .cta-box p{opacity:0.86;font-size:1rem;line-height:1.6;margin:0 0 28px;max-width:44ch;position:relative;}
+  .cta-box .btn{background:#fff;color:var(--sage-deep);box-shadow:0 14px 30px -12px rgba(0,0,0,0.3);position:relative;}
+  .cta-details{position:relative;font-size:0.92rem;line-height:2;opacity:0.92;}
+  .cta-details div{display:flex;gap:10px;align-items:flex-start;margin-bottom:6px;}
+  .cta-details svg{width:16px;height:16px;flex-shrink:0;margin-top:3px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:48px 0 40px;border-top:1px solid var(--line);}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.05rem;}
+  .footer-brand img{width:26px;height:26px;}
+  .footer-meta{font-size:0.8rem;color:var(--ink-faint);text-align:right;}
+  .footer-meta a{color:var(--ink-soft);text-decoration:none;}
+  .credit{
+    display:block;margin-top:6px;font-size:0.78rem;color:var(--ink-faint);text-decoration:none;
+  }
+  .credit:hover{color:var(--blush-deep);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    nav.links{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo-wrap{order:-1;max-width:340px;margin:0 auto 30px;}
+    .hero p.lead{max-width:none;}
+    .pilares-grid{grid-template-columns:1fr;}
+    .sobre-grid{grid-template-columns:1fr;gap:44px;}
+    .sobre-photo{max-width:380px;margin:0 auto;}
+    .dep-grid{grid-template-columns:1fr;}
+    .cta-box{grid-template-columns:1fr;padding:48px 32px;}
+    .cta-details{border-top:1px solid rgba(255,255,255,0.2);padding-top:24px;}
+    .footer-row{flex-direction:column;align-items:flex-start;text-align:left;}
+    .footer-meta{text-align:left;}
+  }
+  @media (max-width: 520px){
+    .wrap{padding:0 20px;}
+    .nav{padding:14px 20px;}
+    .brand{font-size:1rem;gap:8px;white-space:nowrap;}
+    .brand small{display:none;}
+    .nav-cta{padding:9px 15px;font-size:0.78rem;}
+    .hero{padding:52px 0 70px;}
+    .hero-tag{left:0;bottom:-18px;padding:12px 16px;}
+    .cta-row{flex-direction:column;align-items:flex-start;}
+    .pilar-card{padding:30px 24px;}
+    .cta-box{padding:40px 24px;}
+    .dep-card{padding:30px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <img class="brand-mark" src="assets/logo-badge.png" alt="">
+      <span>Isabella Pereira<small>Nutricionista Infantil</small></span>
+    </a>
+    <nav class="links">
+      <a href="#pilares">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/5567992151938?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Isabella" target="_blank" rel="noopener">
+      Agendar consulta
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Nutrição infantil · Campo Grande, MS</span>
+        <h1>Uma relação leve e <em>feliz</em> com a comida, desde os primeiros anos.</h1>
+        <p class="lead">Acompanhamento nutricional para bebês, crianças e adolescentes, baseado em evidência científica e em um olhar acolhedor para cada família.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://wa.me/5567992151938?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Isabella" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38c1.45.79 3.08 1.21 4.75 1.21 5.46 0 9.91-4.45 9.91-9.91C21.94 6.45 17.5 2 12.04 2zm0 18.1c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.15.82.84-3.07-.2-.32a8.15 8.15 0 0 1-1.26-4.36c0-4.53 3.69-8.22 8.23-8.22 4.53 0 8.22 3.69 8.22 8.22 0 4.54-3.69 8.29-8.13 8.29zm4.5-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.41 1.02 2.58.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+            Agendar consulta
+          </a>
+          <a class="btn-ghost" href="#sobre">Conhecer a Isabella ↓</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-blob"></div>
+        <div class="hero-photo">
+          <img src="assets/isabella-hero.jpg" alt="Isabella Pereira, nutricionista infantil, em seu consultório">
+        </div>
+        <div class="hero-tag">
+          <span class="num">CRN</span>
+          <span class="txt">365982 · Universidade Católica Dom Bosco, especialização em Nutrição Pediátrica pela UFRJ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section class="pilares" id="pilares">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-label">Áreas de atuação</span>
+        <h2>Cuidado nutricional em cada fase da infância</h2>
+      </div>
+      <div class="pilares-grid">
+        <div class="pilar-card">
+          <div class="pilar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v6a3 3 0 0 0 6 0V3"/><path d="M11 9v12"/><path d="M17 3c-1.5 2-1.5 5 0 7 1.5 2 1.5 5 0 9"/></svg>
+          </div>
+          <h3>Seletividade alimentar</h3>
+          <p>Estratégias respeitosas para ampliar o paladar da criança, sem pressão e sem transformar a refeição em um campo de batalha.</p>
+        </div>
+        <div class="pilar-card">
+          <div class="pilar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 2-5 5-5 9a5 5 0 0 0 10 0c0-4-2-7-5-9Z"/><path d="M9 21h6"/><path d="M12 17v4"/></svg>
+          </div>
+          <h3>Introdução alimentar</h3>
+          <p>O início da alimentação do bebê com segurança e no tempo certo, construindo desde cedo uma relação positiva com a comida.</p>
+        </div>
+        <div class="pilar-card">
+          <div class="pilar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 9 8l3 3 3.5-5.5L20 10"/><path d="M3 18h18"/></svg>
+          </div>
+          <h3>Doenças da infância</h3>
+          <p>Suporte nutricional para crianças com diabetes, neuropatias, gastrostomia e outras condições, em conjunto com o tratamento médico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="wrap sobre-grid">
+      <div class="sobre-photo">
+        <div class="sobre-photo-inner">
+          <img src="assets/isabella-about.jpg" alt="Isabella Pereira sorrindo em seu consultório">
+        </div>
+        <div class="sobre-badge"><strong>+5</strong>anos dedicados à nutrição infantil</div>
+      </div>
+      <div class="sobre-content">
+        <span class="section-label">Sobre</span>
+        <h2>Isabella Pereira</h2>
+        <div class="sobre-credential">Nutricionista · CRN 365982</div>
+        <p>Formada pela Universidade Católica Dom Bosco (UCDB), com especialização em Terapia Nutricional Pediátrica pela UFRJ. Atendo bebês, crianças e adolescentes em todas as fases do desenvolvimento, unindo evidência científica a um olhar individual para cada paciente e sua família.</p>
+        <p>Tenho experiência em seletividade alimentar, introdução alimentar, dificuldades alimentares e acompanhamento de crianças com transtornos do neurodesenvolvimento, sempre respeitando o ritmo de cada uma.</p>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Estratégias adaptadas à rotina</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Acompanhamento do desenvolvimento</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Refeições mais tranquilas</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Maior variedade alimentar</span>
+        </div>
+        <a class="btn" href="https://wa.me/5567992151938?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Isabella" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38c1.45.79 3.08 1.21 4.75 1.21 5.46 0 9.91-4.45 9.91-9.91C21.94 6.45 17.5 2 12.04 2zm0 18.1c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.15.82.84-3.07-.2-.32a8.15 8.15 0 0 1-1.26-4.36c0-4.53 3.69-8.22 8.23-8.22 4.53 0 8.22 3.69 8.22 8.22 0 4.54-3.69 8.29-8.13 8.29zm4.5-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.41 1.02 2.58.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+          Agendar consulta
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depoimentos" id="depoimentos">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="section-label">Depoimentos</span>
+        <h2>O que as famílias dizem</h2>
+      </div>
+      <div class="dep-grid">
+        <div class="dep-card">
+          <div class="dep-quote-mark">"</div>
+          <p class="quote">Simplesmente maravilhosa. Tem um tato excepcional com os pequenos, sempre paciente e pronta a ajudar as crianças e suas famílias. Recomendo demais.</p>
+          <div class="dep-author">
+            <div class="dep-avatar">J</div>
+            <span>Josiana Abelardo</span>
+          </div>
+        </div>
+        <div class="dep-card">
+          <div class="dep-quote-mark">"</div>
+          <p class="quote">Profissional maravilhosa. Nos ajudou muito quando meu filho estava resistente à alimentação. Eu e minha família recomendamos de olhos fechados.</p>
+          <div class="dep-author">
+            <div class="dep-avatar">M</div>
+            <span>Maria Eduarda Souza Carvalho</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="section-label">Dúvidas frequentes</span>
+        <h2>Perguntas que os pais mais fazem</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q">Com qual idade a criança pode iniciar o acompanhamento?<span class="plus"></span></button>
+          <div class="faq-a"><p>Desde a introdução alimentar, por volta dos seis meses, até a adolescência.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Meu filho é muito seletivo. Ainda há solução?<span class="plus"></span></button>
+          <div class="faq-a"><p>Sim. A seletividade alimentar pode ser trabalhada com estratégias respeitosas e graduais, sem pressão ou traumas para a criança e para a família.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">O atendimento é online?<span class="plus"></span></button>
+          <div class="faq-a"><p>Sim, a maior parte das consultas pode ser feita online. A exceção é o atendimento "Escolinha da Nutri", que é presencial.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Atende por planos de saúde?<span class="plus"></span></button>
+          <div class="faq-a"><p>O atendimento é exclusivamente particular, o que garante o tempo e o acolhimento que cada paciente merece.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="wrap">
+      <div class="cta-box">
+        <div>
+          <h2>Vamos cuidar da alimentação do seu filho com leveza?</h2>
+          <p>Agende uma consulta e comece a construir uma relação mais tranquila e positiva entre seu filho e a comida.</p>
+          <a class="btn" href="https://wa.me/5567992151938?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Isabella" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38c1.45.79 3.08 1.21 4.75 1.21 5.46 0 9.91-4.45 9.91-9.91C21.94 6.45 17.5 2 12.04 2zm0 18.1c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.15.82.84-3.07-.2-.32a8.15 8.15 0 0 1-1.26-4.36c0-4.53 3.69-8.22 8.23-8.22 4.53 0 8.22 3.69 8.22 8.22 0 4.54-3.69 8.29-8.13 8.29zm4.5-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.41 1.02 2.58.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+        </div>
+        <div class="cta-details">
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Rua Hermelita de Oliveira Gomes, 292, Santa Fe, Campo Grande, MS</span>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            <a href="https://www.instagram.com/nutrisapereira/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">@nutrisapereira</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="" style="width:auto;height:34px;">
+    </div>
+    <div class="footer-meta">
+      CRN 365982 · Copyright © Isabella Pereira 2026 · Todos os direitos reservados
+      <a class="credit" href="https://instagram.com/vivienvital" target="_blank" rel="noopener">Feito com ❤️ por vivienvital</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight + 'px'; }
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(other){
+        if(other !== item){
+          other.classList.remove('open');
+          other.querySelector('.faq-a').style.maxHeight = null;
+        }
+      });
+      item.classList.toggle('open', !isOpen);
+      a.style.maxHeight = !isOpen ? a.scrollHeight + 'px' : null;
+    });
+  });
+</script>
+
+</body>
+</html>
