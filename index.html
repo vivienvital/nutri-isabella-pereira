@@ -165,28 +165,35 @@
 
   /* ---------- PILARES ---------- */
   .pilares{padding:100px 0;}
-  .pilares-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .pilares-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
   .pilar-card{
     background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
     padding:38px 32px 34px;transition:transform .25s ease, box-shadow .25s ease;
   }
   .pilar-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
-  .pilar-card.has-video{
-    position:relative;overflow:hidden;min-height:360px;
-    display:flex;flex-direction:column;justify-content:flex-end;
-    border:none;
+
+  .pilar-feature{
+    position:relative;overflow:hidden;border-radius:var(--radius);
+    min-height:460px;display:flex;align-items:flex-end;
+    margin-bottom:28px;box-shadow:var(--shadow);
   }
-  .pilar-card.has-video video{
+  .pilar-feature video{
     position:absolute;inset:0;width:100%;height:100%;
     object-fit:cover;z-index:0;
   }
-  .pilar-card.has-video::after{
+  .pilar-feature::after{
     content:"";position:absolute;inset:0;z-index:1;
-    background:linear-gradient(180deg, rgba(46,42,34,0.06) 0%, rgba(46,42,34,0.5) 62%, rgba(46,42,34,0.82) 100%);
+    background:linear-gradient(90deg, rgba(46,42,34,0.7) 0%, rgba(46,42,34,0.42) 42%, rgba(46,42,34,0.08) 75%),
+               linear-gradient(180deg, rgba(46,42,34,0.05) 0%, rgba(46,42,34,0.55) 100%);
   }
-  .pilar-card.has-video .pilar-icon,
-  .pilar-card.has-video h3,
-  .pilar-card.has-video p{position:relative;z-index:2;}
+  .pilar-feature-content{position:relative;z-index:2;padding:48px 56px;max-width:480px;}
+  .pilar-feature-content .pilar-icon{background:rgba(255,255,255,0.94);}
+  .pilar-feature-content .pilar-icon svg{color:var(--sage-ink);}
+  .pilar-feature-content h3{
+    font-family:var(--font-display);font-weight:400;color:#fff;
+    font-size:clamp(1.7rem,2.8vw,2.2rem);margin:0 0 14px;
+  }
+  .pilar-feature-content p{color:rgba(255,255,255,0.92);font-size:1.04rem;line-height:1.68;margin:0;}
   .pilar-icon{
     width:56px;height:56px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;
@@ -195,19 +202,14 @@
   .pilar-icon svg{width:26px;height:26px;}
   .pilar-card:nth-child(1) .pilar-icon{background:var(--blush);}
   .pilar-card:nth-child(1) .pilar-icon svg{color:var(--blush-deep);}
-  .pilar-card:nth-child(2) .pilar-icon{background:var(--sage);}
-  .pilar-card:nth-child(2) .pilar-icon svg{color:var(--sage-ink);}
-  .pilar-card:nth-child(3) .pilar-icon{background:var(--cream-deep);}
-  .pilar-card:nth-child(3) .pilar-icon svg{color:#9C7B4A;}
+  .pilar-card:nth-child(2) .pilar-icon{background:var(--cream-deep);}
+  .pilar-card:nth-child(2) .pilar-icon svg{color:#9C7B4A;}
   .pilar-card h3{font-family:var(--font-display);font-size:1.32rem;font-weight:500;margin:0 0 12px;}
   .pilar-card p{color:var(--ink-soft);font-size:0.96rem;line-height:1.6;margin:0;}
-  .pilar-card.has-video .pilar-icon{background:rgba(255,255,255,0.92);}
-  .pilar-card.has-video h3{color:#fff;}
-  .pilar-card.has-video p{color:rgba(255,255,255,0.92);}
 
   /* ---------- SOBRE ---------- */
   .sobre{padding:40px 0 110px;}
-  .sobre-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;}
+  .sobre-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;}
   .sobre-photo{position:relative;}
   .sobre-photo-inner{
     border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
@@ -321,6 +323,11 @@
     .hero-photo-wrap{order:-1;max-width:340px;margin:0 auto 30px;}
     .hero p.lead{max-width:none;}
     .pilares-grid{grid-template-columns:1fr;}
+    .pilar-feature{min-height:380px;align-items:flex-end;}
+    .pilar-feature-content{padding:32px 28px;max-width:none;}
+    .pilar-feature::after{
+      background:linear-gradient(180deg, rgba(46,42,34,0.1) 0%, rgba(46,42,34,0.5) 55%, rgba(46,42,34,0.86) 100%);
+    }
     .sobre-grid{grid-template-columns:1fr;gap:44px;}
     .sobre-photo{max-width:380px;margin:0 auto;}
     .dep-grid{grid-template-columns:1fr;}
@@ -404,6 +411,18 @@
         <span class="section-label">Áreas de atuação</span>
         <h2>Cuidado nutricional em cada fase da infância</h2>
       </div>
+      <div class="pilar-feature">
+        <video autoplay muted loop playsinline poster="assets/bg-introducao-alimentar-poster.jpg">
+          <source src="assets/bg-introducao-alimentar.mp4" type="video/mp4">
+        </video>
+        <div class="pilar-feature-content">
+          <div class="pilar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 2-5 5-5 9a5 5 0 0 0 10 0c0-4-2-7-5-9Z"/><path d="M9 21h6"/><path d="M12 17v4"/></svg>
+          </div>
+          <h3>Introdução alimentar</h3>
+          <p>O início da alimentação do bebê com segurança e no tempo certo, construindo desde cedo uma relação positiva com a comida.</p>
+        </div>
+      </div>
       <div class="pilares-grid">
         <div class="pilar-card">
           <div class="pilar-icon">
@@ -411,16 +430,6 @@
           </div>
           <h3>Seletividade alimentar</h3>
           <p>Estratégias respeitosas para ampliar o paladar da criança, sem pressão e sem transformar a refeição em um campo de batalha.</p>
-        </div>
-        <div class="pilar-card has-video">
-          <video autoplay muted loop playsinline poster="assets/bg-introducao-alimentar-poster.jpg">
-            <source src="assets/bg-introducao-alimentar.mp4" type="video/mp4">
-          </video>
-          <div class="pilar-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 2-5 5-5 9a5 5 0 0 0 10 0c0-4-2-7-5-9Z"/><path d="M9 21h6"/><path d="M12 17v4"/></svg>
-          </div>
-          <h3>Introdução alimentar</h3>
-          <p>O início da alimentação do bebê com segurança e no tempo certo, construindo desde cedo uma relação positiva com a comida.</p>
         </div>
         <div class="pilar-card">
           <div class="pilar-icon">
