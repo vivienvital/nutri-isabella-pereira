@@ -114,6 +114,7 @@
     color:var(--sage-ink);font-weight:600;margin-bottom:22px;
   }
   .eyebrow::before{content:"";width:26px;height:1px;background:var(--sage-ink);}
+  .eyebrow-mobile{display:none;}
   .hero h1{
     font-family:var(--font-display);font-weight:400;
     font-size:clamp(2.5rem,4.6vw,3.7rem);line-height:1.08;letter-spacing:-0.01em;
@@ -158,9 +159,10 @@
     background:var(--card);border:1px solid var(--line);
     border-radius:18px;padding:16px 20px;
     box-shadow:0 18px 40px -20px rgba(60,45,30,0.4);
-    display:flex;align-items:center;gap:12px;
     max-width:230px;
   }
+  .hero-tag-desktop{display:flex;align-items:center;gap:12px;}
+  .hero-tag-mobile{display:none;}
   .hero-tag .num{font-family:var(--font-display);font-size:1.7rem;color:var(--sage-ink);line-height:1;}
   .hero-tag .txt{font-size:0.78rem;color:var(--ink-soft);line-height:1.35;}
 
@@ -350,6 +352,10 @@
     .hero-grid{grid-template-columns:1fr;}
     .hero-photo-wrap{order:-1;max-width:340px;margin:0 auto 30px;}
     .hero p.lead{max-width:none;}
+    .eyebrow-desktop{display:none;}
+    .eyebrow-mobile{display:inline-flex;}
+    .hero-tag-desktop{display:none;}
+    .hero-tag-mobile{display:block;font-size:0.9rem;font-weight:600;color:var(--ink);text-align:center;}
     .pilares-grid{grid-template-columns:1fr;}
     .pilar-feature{min-height:380px;align-items:flex-end;}
     .pilar-feature-content{padding:32px 28px;max-width:none;}
@@ -423,7 +429,8 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">Nutrição infantil · Campo Grande, MS</span>
+        <span class="eyebrow eyebrow-desktop">Nutrição infantil · Campo Grande, MS</span>
+        <span class="eyebrow eyebrow-mobile">CRN 365982</span>
         <h1>Uma relação leve e <em>feliz</em> com a comida, desde os primeiros passos.</h1>
         <p class="lead">Acompanhamento nutricional para bebês, crianças e adolescentes, baseado em evidência científica e em um olhar acolhedor para cada família.</p>
         <div class="cta-row">
@@ -442,8 +449,11 @@
           </video>
         </div>
         <div class="hero-tag">
-          <span class="num">CRN</span>
-          <span class="txt">365982 · Universidade Católica Dom Bosco, especialização em Nutrição Pediátrica pela UFRJ</span>
+          <div class="hero-tag-desktop">
+            <span class="num">CRN</span>
+            <span class="txt">365982 · Universidade Católica Dom Bosco, especialização em Nutrição Pediátrica pela UFRJ</span>
+          </div>
+          <div class="hero-tag-mobile">Nutricionista Infantil · Campo Grande, MS</div>
         </div>
       </div>
     </div>
