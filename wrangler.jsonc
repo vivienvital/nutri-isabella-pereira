@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nutri-isabella-pereira",
+  "account_id": "ad0acfa8d8d0b8ca5cb14514660e52e1",
+  "compatibility_date": "2026-11-01",
+  "main": "worker.js",
+  // Copia só os arquivos do site pra dist/ (evita subir .git e configs)
+  "build": {
+    "command": "rm -rf dist && mkdir dist && cp -R index.html assets dist/"
+  },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    // Os vídeos passam pelo worker.js pra suportar Range (iPhone)
+    "run_worker_first": ["/assets/*.mp4"]
+  }
+}
