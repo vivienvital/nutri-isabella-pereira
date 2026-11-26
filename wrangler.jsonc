@@ -4,6 +4,10 @@
   "account_id": "ad0acfa8d8d0b8ca5cb14514660e52e1",
   "compatibility_date": "2026-11-01",
   "main": "worker.js",
+  "routes": [
+    { "pattern": "nutrisabellapereira.com.br", "custom_domain": true },
+    { "pattern": "www.nutrisabellapereira.com.br", "custom_domain": true }
+  ],
   // Copia só os arquivos do site pra dist/ (evita subir .git e configs)
   "build": {
     "command": "rm -rf dist && mkdir dist && cp -R index.html assets dist/"
